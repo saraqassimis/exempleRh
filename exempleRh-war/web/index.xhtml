@@ -1,19 +1,41 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
-    <h:head>
-        <title>Facelet Title</title>
-        <h:outputStylesheet name="css/jsfcrud.css"/>
-    </h:head>
-    <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="/employe/List" value="Show All Employe Items"/>
-        <br />
-        <h:link outcome="/formation/List" value="Show All Formation Items"/>
-    </h:body>
-
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://richfaces.org/sandbox/bootstrap">
+    
+    <ui:composition template="/template.xhtml">
+     <ui:define name="title">
+            salut
+        </ui:define>
+        <ui:define name="body">
+            <b:tabbable>
+    <b:tab title="Tab1">
+        Content1
+    </b:tab>
+    <b:menuFacet label="Tab2">
+        <b:tab title="Tab2.1">
+            Content1.1
+        </b:tab>
+        <b:tab title="Tab2.2">
+            Content1.2
+        </b:tab>
+    </b:menuFacet>
+</b:tabbable>
+      <h:form>
+            <h:panelGrid columns="1">
+        <b:buttonDropdown title="Action">
+            <h:link outcome="" value="heroUnit"/>
+            <h:link outcome="" value="tabbable"/>
+            <b:separatorFacet />
+            <h:link outcome="" value="buttonGroup"/>
+            <h:link outcome="" value="navbar"/>
+        </b:buttonDropdown>
+            </h:panelGrid>       
+    </h:form>
+       </ui:define>     
+    </ui:composition>
 
 </html>
 
